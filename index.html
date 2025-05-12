@@ -2,146 +2,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Korean Matrimony | Connected People by Love</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Korean Matrimony | Connecting People by Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
     body {
-      font-family: 'Bebas Neue', cursive;
-      background: linear-gradient(to right, #1a1a2e, #16213e);
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #ff6ec4, #7873f5);
       color: white;
       overflow-x: hidden;
     }
-    .glass {
-      backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .card {
-      width: 300px;
-      height: 400px;
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: transform 0.3s ease-out;
-    }
-    .globe {
-      width: 100%;
-      height: 400px;
-      background: radial-gradient(#1e3a8a, #0f172a);
+    .netflix-intro {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      border-radius: 20px;
+      align-items: center;
+      height: 100vh;
+      background: black;
+      animation: fadeIn 2s ease-in-out;
     }
-    .tag {
-      display: inline-block;
-      padding: 0.3rem 0.7rem;
-      margin: 0.3rem;
-      border-radius: 1rem;
-      background-color: #4ade80;
-      color: black;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .logo {
+      font-size: 3rem;
       font-weight: bold;
+      color: #ff4ecb;
     }
-    .tag.red {
-      background-color: #f87171;
+    .caption {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      color: white;
+    }
+    .btn-start {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: #ff4ecb;
+      border: none;
+      font-size: 1rem;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .onboarding {
+      display: none;
+      padding: 2rem;
+    }
+    .question {
+      margin-bottom: 2rem;
+    }
+    .question label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .tags button {
+      background: white;
+      color: #333;
+      padding: 0.5rem 1rem;
+      margin: 0.3rem;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .profile-view {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .swipe-card {
+      border: 2px solid white;
+      padding: 2rem;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.3);
+    }
+    .swipe-actions button {
+      font-size: 2rem;
+      background: none;
+      border: none;
+      margin: 1rem;
+      cursor: pointer;
+    }
+    .map-view {
+      display: none;
+      padding: 2rem;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <!-- Hero Video & Swipe Section -->
-  <section class="h-screen flex flex-col justify-center items-center text-center bg-black relative">
-    <video autoplay muted loop class="absolute w-full h-full object-cover opacity-20"></video>
-    <h1 class="text-5xl z-10 text-pink-400">Korean Matrimony</h1>
-    <p class="text-xl z-10 mt-2 text-white">Connecting People by Love</p>
-    <div id="swipe-area" class="relative w-80 h-[400px] mt-10 z-10">
-      <div class="card" style="background: url('https://source.unsplash.com/300x400/?korean,wedding') center/cover"></div>
-      <div class="card" style="background: url('https://source.unsplash.com/300x400/?couple,dating') center/cover"></div>
+  <div class="netflix-intro" id="intro">
+    <div class="logo">Korean Matrimony</div>
+    <div class="caption">Connecting People by Love</div>
+    <button class="btn-start" onclick="startApp()">Start</button>
+  </div>  <div class="onboarding" id="onboarding">
+    <div class="question">
+      <label>Hey! What should we call you?</label>
+      <input type="text" id="name" placeholder="Your Name" />
     </div>
-  </section>  <!-- Compatibility Tags -->  <section class="py-10 text-center">
-    <h2 class="text-3xl mb-4">AI Compatibility</h2>
-    <div>
-      <span class="tag">Green Flag: Empathy</span>
-      <span class="tag">Green Flag: Humor</span>
-      <span class="tag red">Red Flag: Ghosting</span>
-      <span class="tag">Green Flag: Communication</span>
-      <span class="tag red">Red Flag: Inconsistency</span>
+    <div class="question">
+      <label>When’s your birthday? (We’ll bring the cake!)</label>
+      <input type="date" id="birthday" />
     </div>
-  </section>  <!-- Features -->  <section class="px-4 py-12 max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
-    <div class="glass p-6 rounded-xl">
-      <h3 class="text-2xl font-bold text-pink-400 mb-2">1. AI-powered Compatibility</h3>
-      <p>Smart matching using profile, chat, and behavioral analysis.</p>
+    <div class="question">
+      <label>How do you vibe with gender?</label><br />
+      <button onclick="setGender('guy')">I'm a guy</button>
+      <button onclick="setGender('girl')">I'm a girl</button>
+      <button onclick="setGender('other')">Something else</button>
     </div>
-    <div class="glass p-6 rounded-xl">
-      <h3 class="text-2xl font-bold text-pink-400 mb-2">2. Video Profile Introduction</h3>
-      <p>Users upload 30 sec videos to express real personality.</p>
+    <div class="question">
+      <label>Tell us your story in 1–2 lines.</label>
+      <textarea id="bio" maxlength="300"></textarea>
     </div>
-    <div class="glass p-6 rounded-xl">
-      <h3 class="text-2xl font-bold text-pink-400 mb-2">3. Real-time Behavior Analysis</h3>
-      <p>AI advises how to improve profile visibility & engagement.</p>
+    <div class="question">
+      <label>What gets your heart racing?</label>
+      <div class="tags" id="interests">
+        <button>K-pop</button>
+        <button>food trips</button>
+        <button>late-night talks</button>
+        <button>hiking</button>
+        <button>coding</button>
+        <button>family</button>
+        <button>memes</button>
+        <button>travel</button>
+      </div>
     </div>
-    <div class="glass p-6 rounded-xl">
-      <h3 class="text-2xl font-bold text-pink-400 mb-2">4. AI Conversation Starters</h3>
-      <p>Break the ice with tailored chat prompts.</p>
+    <button class="btn-start" onclick="showProfileView()">Let’s Go!</button>
+  </div>  <div class="profile-view" id="profileView">
+    <div class="swipe-card">
+      <video width="100%" controls>
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p><strong>Jisoo, 25</strong><br />Bio: Loves dancing & coding<br />Flag: Green</p>
     </div>
-    <div class="glass p-6 rounded-xl">
-      <h3 class="text-2xl font-bold text-pink-400 mb-2">5. Activity Suggestions</h3>
-      <p>Meet offline via AI-recommended local events.</p>
+    <div class="swipe-actions">
+      <button style="color:red;">X</button>
+      <button style="color:green;">✔</button>
     </div>
-    <div class="glass p-6 rounded-xl">
-      <h3 class="text-2xl font-bold text-pink-400 mb-2">6. Privacy & Security</h3>
-      <p>End-to-end encrypted chats, verification, control visibility.</p>
-    </div>
-    <div class="glass p-6 rounded-xl">
-      <h3 class="text-2xl font-bold text-pink-400 mb-2">7. Fake Profile Detection</h3>
-      <p>Detects bots, scammers, and edited images via AI.</p>
-    </div>
-    <div class="glass p-6 rounded-xl">
-      <h3 class="text-2xl font-bold text-pink-400 mb-2">8. AI Relationship Advice</h3>
-      <p>Chatbot mentor supports emotional guidance & tips.</p>
-    </div>
-    <div class="glass p-6 rounded-xl">
-      <h3 class="text-2xl font-bold text-pink-400 mb-2">9. Date Night Planner</h3>
-      <p>Suggests date ideas by weather & interests.</p>
-    </div>
-    <div class="glass p-6 rounded-xl">
-      <h3 class="text-2xl font-bold text-pink-400 mb-2">10. Match Control</h3>
-      <p>Set filters: verified only, shared interests, etc.</p>
-    </div>
-    <div class="glass p-6 rounded-xl">
-      <h3 class="text-2xl font-bold text-pink-400 mb-2">11. Gen Z Dictionary</h3>
-      <p>Understand trending lingo: "rizz", "delulu", etc.</p>
-    </div>
-    <div class="glass p-6 rounded-xl">
-      <h3 class="text-2xl font-bold text-pink-400 mb-2">12. Global Love Map</h3>
-      <p>Find matches on a rotating 3D map by touch/zoom.</p>
-    </div>
-  </section>  <!-- Global Love Map -->  <section class="px-4 py-10">
-    <h2 class="text-center text-3xl font-bold mb-6">Global Love Map</h2>
-    <div class="globe">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31542.98960969372!2d126.9779692!3d37.566535" width="100%" height="400" style="border:0; border-radius:20px" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </section>  <!-- Footer -->  <footer class="bg-black text-center py-6 text-white">
-    <p>&copy; 2025 Padamata Greeshma | Contact: greeshmapadamata9@gmail.com</p>
-  </footer>  <!-- JS: Tinder Swipe -->  <script>
-    const cards = document.querySelectorAll('.card');
-    let topCard = cards[0];
-    let nextCard = cards[1];
-    let isDragging = false, startX = 0;
-
-    topCard.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      startX = e.clientX;
-    });
-
-    document.addEventListener('mouseup', () => isDragging = false);
-    document.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      let dx = e.clientX - startX;
-      topCard.style.transform = `translateX(${dx}px) rotate(${dx / 10}deg)`;
-    });
+    <button class="btn-start" onclick="showMapView()">See Love Map</button>
+  </div>  <div class="map-view" id="mapView">
+    <h2>Global Love Map</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_map_blank_without_borders.svg/2048px-World_map_blank_without_borders.svg.png" width="100%" alt="Love Map" />
+  </div>  <script>
+    function startApp() {
+      document.getElementById("intro").style.display = "none";
+      document.getElementById("onboarding").style.display = "block";
+      // Optionally play custom sound here
+    }
+    function setGender(g) {
+      console.log("Gender selected:", g);
+    }
+    function showProfileView() {
+      document.getElementById("onboarding").style.display = "none";
+      document.getElementById("profileView").style.display = "block";
+    }
+    function showMapView() {
+      document.getElementById("profileView").style.display = "none";
+      document.getElementById("mapView").style.display = "block";
+    }
   </script></body>
-  </html>
+        </html>
