@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Korean Matrimony | Connecting People by Love</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom right, #111827, #1f2937);
+      color: #f9fafb;
+    }
+    .glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .glass:hover {
+      transform: scale(1.02);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .swipe-card {
+      position: absolute;
+      width: 90%;
+      max-width: 400px;
+      height: 400px;
+      background: #fff;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.95);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center p-5 border-b border-gray-700 bg-black bg-opacity-50">
+    <h1 class="text-3xl font-bold text-pink-500">Korean Matrimony</h1>
+    <nav class="space-x-4 text-sm">
+      <a href="#features" class="hover:text-pink-400">Features</a>
+      <a href="#map" class="hover:text-pink-400">Love Map</a>
+      <a href="#contact" class="hover:text-pink-400">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-20 bg-gradient-to-br from-pink-600 to-indigo-700 text-white">
+    <h2 class="text-4xl md:text-5xl font-extrabold">Connecting People by Love</h2>
+    <p class="mt-4 text-lg max-w-2xl mx-auto">A Gen Z-friendly Korean Matrimony platform with AI-powered compatibility and Netflix–Tinder style.</p>
+    <button class="mt-6 px-8 py-3 bg-white text-pink-600 rounded-full font-semibold hover:bg-pink-100 transition">Get Started</button>
+  </section>
+
+  <!-- Swipe Style Cards (Tinder vibe) -->
+  <section class="relative py-16 flex justify-center items-center">
+    <div class="swipe-card" style="z-index: 3;"><img src="https://source.unsplash.com/400x400/?woman,korean" class="w-full h-full object-cover" /></div>
+    <div class="swipe-card" style="top: 10px; left: 10px; z-index: 2;"><img src="https://source.unsplash.com/401x401/?man,korean" class="w-full h-full object-cover" /></div>
+    <div class="swipe-card" style="top: 20px; left: 20px; z-index: 1;"><img src="https://source.unsplash.com/402x402/?love,people" class="w-full h-full object-cover" /></div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="px-4 py-16 max-w-6xl mx-auto">
+    <h3 class="text-3xl font-bold text-center mb-12">Our Features</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="glass p-6 rounded-xl"><h4 class="font-semibold text-lg">1. AI Compatibility Matching</h4><p>Smart AI analyzes interests & behavior to match deeply compatible users.</p></div>
+      <div class="glass p-6 rounded-xl"><h4 class="font-semibold text-lg">2. Video Profile Introduction</h4><p>Upload 15–30 sec videos to show off your personality beyond text.</p></div>
+      <div class="glass p-6 rounded-xl"><h4 class="font-semibold text-lg">3. Real-Time Behavior Analysis</h4><p>Get real-time tips to improve visibility based on your activity.</p></div>
+      <div class="glass p-6 rounded-xl"><h4 class="font-semibold text-lg">4. AI Conversation Starters</h4><p>Personalized openers based on shared interests and chats.</p></div>
+      <div class="glass p-6 rounded-xl"><h4 class="font-semibold text-lg">5. Interest-based Activities</h4><p>Suggests local events and meetups for meaningful offline connection.</p></div>
+      <div class="glass p-6 rounded-xl"><h4 class="font-semibold text-lg">6. Privacy & Security</h4><p>Encrypted messaging, profile privacy, and background checks.</p></div>
+      <div class="glass p-6 rounded-xl"><h4 class="font-semibold text-lg">7. Fake Profile Detection</h4><p>AI checks for fake images and flags unusual behavior patterns.</p></div>
+      <div class="glass p-6 rounded-xl"><h4 class="font-semibold text-lg">8. AI Relationship Mentor</h4><p>Get personalized dating advice & emotional support with AI.</p></div>
+      <div class="glass p-6 rounded-xl"><h4 class="font-semibold text-lg">9. "Date Night" Planner</h4><p>Curated plans based on your mood, location & preferences.</p></div>
+      <div class="glass p-6 rounded-xl"><h4 class="font-semibold text-lg">10. Match Control</h4><p>Filter who sees your profile with advanced controls.</p></div>
+      <div class="glass p-6 rounded-xl"><h4 class="font-semibold text-lg">11. Gen Z Dictionary</h4><p>Understand terms like “rizz”, “ghosting” & more.</p></div>
+      <div class="glass p-6 rounded-xl"><h4 class="font-semibold text-lg">12. Global Love Map</h4><p>Spin & explore love across the world with our interactive map.</p></div>
+    </div>
+  </section>
+
+  <!-- Love Map -->
+  <section id="map" class="py-16 bg-gray-800">
+    <h3 class="text-3xl font-bold text-center mb-6">Global Love Map</h3>
+    <div class="map-container mx-auto max-w-4xl rounded-lg overflow-hidden">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31542.98960969372!2d126.9779692!3d37.566535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2skr!4v1683642403691!5m2!1sen!2skr" width="100%" height="400" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-black text-center text-sm text-gray-400 py-6">
+    <p>&copy; 2025 Padamata Greeshma. All rights reserved.</p>
+    <p>Contact: <a href="mailto:greeshmapadamata9@gmail.com" class="text-pink-400 hover:underline">greeshmapadamata9@gmail.com</a></p>
+  </footer>
+
+  <!-- Minimal JS -->
+  <script>
+    console.log("Korean Matrimony site loaded. Ready for swipe animations and backend integration.");
+    // Placeholder for swipe logic, backend APIs, etc.
+  </script>
+</body>
+  </html>
