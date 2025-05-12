@@ -1,94 +1,147 @@
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Korean Matrimony - Love Reimagined</title>
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Korean Matrimony | Connected People by Love</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
     body {
-      font-family: 'Netflix Sans', sans-serif;
-      background: linear-gradient(to right, #ff6ec4, #7873f5);
+      font-family: 'Bebas Neue', cursive;
+      background: linear-gradient(to right, #1a1a2e, #16213e);
       color: white;
       overflow-x: hidden;
     }
+    .glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
     .card {
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      width: 300px;
+      height: 400px;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: transform 0.3s ease-out;
+    }
+    .globe {
+      width: 100%;
+      height: 400px;
+      background: radial-gradient(#1e3a8a, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.3rem 0.7rem;
+      margin: 0.3rem;
       border-radius: 1rem;
+      background-color: #4ade80;
+      color: black;
+      font-weight: bold;
     }
-    .swipe-card {
-      width: 90%;
-      max-width: 400px;
-      margin: auto;
-      transition: transform 0.3s ease;
-    }
-    .swipe-card:hover {
-      transform: scale(1.03);
+    .tag.red {
+      background-color: #f87171;
     }
   </style>
-</head><body class="text-center p-4">
-  <section class="text-4xl font-bold mt-6">Connecting People by Love</section>
-  <p class="text-xl mt-2">A Gen Z-friendly Korean Matrimony platform with AI-powered compatibility and Netflix–Tinder style.</p>  <!-- Video Intro -->  <section class="my-8">
-    <video autoplay loop muted class="rounded-xl shadow-lg w-full max-w-md mx-auto">
-      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </section>  <!-- Tinder Swipe Cards -->  <section class="my-10">
-    <h2 class="text-2xl font-semibold mb-4">Find Your Match</h2>
-    <div class="swipe-card bg-white text-black p-6 card">
-      <h3 class="text-xl font-bold">Seojun, 28</h3>
-      <p>Seoul | AI Engineer | Loves K-Dramas</p>
+</head>
+<body>
+  <!-- Hero Video & Swipe Section -->
+  <section class="h-screen flex flex-col justify-center items-center text-center bg-black relative">
+    <video autoplay muted loop class="absolute w-full h-full object-cover opacity-20"></video>
+    <h1 class="text-5xl z-10 text-pink-400">Korean Matrimony</h1>
+    <p class="text-xl z-10 mt-2 text-white">Connecting People by Love</p>
+    <div id="swipe-area" class="relative w-80 h-[400px] mt-10 z-10">
+      <div class="card" style="background: url('https://source.unsplash.com/300x400/?korean,wedding') center/cover"></div>
+      <div class="card" style="background: url('https://source.unsplash.com/300x400/?couple,dating') center/cover"></div>
     </div>
-  </section>  <!-- Features Grid -->  <section class="my-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="card p-6 bg-purple-700">
-      <h3 class="text-xl font-bold mb-2">1. AI Compatibility</h3>
-      <p>Smart match using personality & goals.</p>
+  </section>  <!-- Compatibility Tags -->  <section class="py-10 text-center">
+    <h2 class="text-3xl mb-4">AI Compatibility</h2>
+    <div>
+      <span class="tag">Green Flag: Empathy</span>
+      <span class="tag">Green Flag: Humor</span>
+      <span class="tag red">Red Flag: Ghosting</span>
+      <span class="tag">Green Flag: Communication</span>
+      <span class="tag red">Red Flag: Inconsistency</span>
     </div>
-    <div class="card p-6 bg-pink-600">
-      <h3 class="text-xl font-bold mb-2">2. Fake Profile Detector</h3>
-      <p>Detects suspicious activity using ML.</p>
+  </section>  <!-- Features -->  <section class="px-4 py-12 max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
+    <div class="glass p-6 rounded-xl">
+      <h3 class="text-2xl font-bold text-pink-400 mb-2">1. AI-powered Compatibility</h3>
+      <p>Smart matching using profile, chat, and behavioral analysis.</p>
     </div>
-    <div class="card p-6 bg-indigo-600">
-      <h3 class="text-xl font-bold mb-2">3. Relationship AI</h3>
-      <p>Get advice from our smart chatbot.</p>
+    <div class="glass p-6 rounded-xl">
+      <h3 class="text-2xl font-bold text-pink-400 mb-2">2. Video Profile Introduction</h3>
+      <p>Users upload 30 sec videos to express real personality.</p>
     </div>
-    <div class="card p-6 bg-yellow-500 text-black">
-      <h3 class="text-xl font-bold mb-2">4. Gen Z Dictionary</h3>
-      <p>Learn dating lingo like Rizz & Ship!</p>
+    <div class="glass p-6 rounded-xl">
+      <h3 class="text-2xl font-bold text-pink-400 mb-2">3. Real-time Behavior Analysis</h3>
+      <p>AI advises how to improve profile visibility & engagement.</p>
     </div>
-    <div class="card p-6 bg-red-500">
-      <h3 class="text-xl font-bold mb-2">5. Global Love Map</h3>
-      <p>Meet matches from Seoul to Paris!</p>
+    <div class="glass p-6 rounded-xl">
+      <h3 class="text-2xl font-bold text-pink-400 mb-2">4. AI Conversation Starters</h3>
+      <p>Break the ice with tailored chat prompts.</p>
     </div>
-    <div class="card p-6 bg-blue-600">
-      <h3 class="text-xl font-bold mb-2">6. Verified Profiles</h3>
-      <p>Trust through document verification.</p>
+    <div class="glass p-6 rounded-xl">
+      <h3 class="text-2xl font-bold text-pink-400 mb-2">5. Activity Suggestions</h3>
+      <p>Meet offline via AI-recommended local events.</p>
     </div>
-    <div class="card p-6 bg-pink-400">
-      <h3 class="text-xl font-bold mb-2">7. Dopamine Design</h3>
-      <p>Bright colors + smooth animations!</p>
+    <div class="glass p-6 rounded-xl">
+      <h3 class="text-2xl font-bold text-pink-400 mb-2">6. Privacy & Security</h3>
+      <p>End-to-end encrypted chats, verification, control visibility.</p>
     </div>
-    <div class="card p-6 bg-green-500">
-      <h3 class="text-xl font-bold mb-2">8. Privacy First</h3>
-      <p>End-to-end encrypted messages.</p>
+    <div class="glass p-6 rounded-xl">
+      <h3 class="text-2xl font-bold text-pink-400 mb-2">7. Fake Profile Detection</h3>
+      <p>Detects bots, scammers, and edited images via AI.</p>
     </div>
-    <div class="card p-6 bg-purple-900">
-      <h3 class="text-xl font-bold mb-2">9. Cultural Filters</h3>
-      <p>Filter by tradition, language, values.</p>
+    <div class="glass p-6 rounded-xl">
+      <h3 class="text-2xl font-bold text-pink-400 mb-2">8. AI Relationship Advice</h3>
+      <p>Chatbot mentor supports emotional guidance & tips.</p>
     </div>
-    <div class="card p-6 bg-orange-600">
-      <h3 class="text-xl font-bold mb-2">10. Date Ideas</h3>
-      <p>Get K-drama-inspired date tips.</p>
+    <div class="glass p-6 rounded-xl">
+      <h3 class="text-2xl font-bold text-pink-400 mb-2">9. Date Night Planner</h3>
+      <p>Suggests date ideas by weather & interests.</p>
     </div>
-    <div class="card p-6 bg-fuchsia-600">
-      <h3 class="text-xl font-bold mb-2">11. In-App Translator</h3>
-      <p>Bridge language gaps instantly.</p>
+    <div class="glass p-6 rounded-xl">
+      <h3 class="text-2xl font-bold text-pink-400 mb-2">10. Match Control</h3>
+      <p>Set filters: verified only, shared interests, etc.</p>
     </div>
-    <div class="card p-6 bg-cyan-600">
-      <h3 class="text-xl font-bold mb-2">12. Swipe Stories</h3>
-      <p>Share how you met your match!</p>
+    <div class="glass p-6 rounded-xl">
+      <h3 class="text-2xl font-bold text-pink-400 mb-2">11. Gen Z Dictionary</h3>
+      <p>Understand trending lingo: "rizz", "delulu", etc.</p>
     </div>
-  </section>  <!-- Footer -->  <footer class="mt-16 text-sm opacity-80">
-    <p>Project by Padamata Greeshma — <a href="mailto:greeshmapadamata9@gmail.com" class="underline">greeshmapadamata9@gmail.com</a></p>
-    <p>&copy; 2025. MIT License.</p>
-  </footer>
-</body></html>
+    <div class="glass p-6 rounded-xl">
+      <h3 class="text-2xl font-bold text-pink-400 mb-2">12. Global Love Map</h3>
+      <p>Find matches on a rotating 3D map by touch/zoom.</p>
+    </div>
+  </section>  <!-- Global Love Map -->  <section class="px-4 py-10">
+    <h2 class="text-center text-3xl font-bold mb-6">Global Love Map</h2>
+    <div class="globe">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31542.98960969372!2d126.9779692!3d37.566535" width="100%" height="400" style="border:0; border-radius:20px" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>  <!-- Footer -->  <footer class="bg-black text-center py-6 text-white">
+    <p>&copy; 2025 Padamata Greeshma | Contact: greeshmapadamata9@gmail.com</p>
+  </footer>  <!-- JS: Tinder Swipe -->  <script>
+    const cards = document.querySelectorAll('.card');
+    let topCard = cards[0];
+    let nextCard = cards[1];
+    let isDragging = false, startX = 0;
+
+    topCard.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.clientX;
+    });
+
+    document.addEventListener('mouseup', () => isDragging = false);
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      let dx = e.clientX - startX;
+      topCard.style.transform = `translateX(${dx}px) rotate(${dx / 10}deg)`;
+    });
+  </script></body>
+  </html>
