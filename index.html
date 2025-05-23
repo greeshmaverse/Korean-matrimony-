@@ -13,25 +13,33 @@
     .card { border-radius: 1rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
   </style>
 </head>
-<body class="overflow-x-hidden">  <!-- Hero -->  <section class="bg-pink-200 p-6 text-center">
+<body class="overflow-x-hidden">
+  <!-- Hero -->
+  <section class="bg-pink-200 p-6 text-center">
     <h1 class="text-4xl font-bold text-purple-800">Korean Matrimony</h1>
     <p class="text-purple-700">Connecting the world through love</p>
     <div class="mt-4 space-x-4">
       <button class="bg-purple-700 text-white px-4 py-2 rounded-xl">Login</button>
       <button class="bg-white border border-purple-700 text-purple-700 px-4 py-2 rounded-xl">Signup</button>
     </div>
-  </section>  <!-- Global Love Map -->  <section class="p-6">
+  </section>
+
+  <!-- Global Love Map -->
+  <section class="p-6">
     <h2 class="section-title">Global Love Map</h2>
     <iframe class="w-full h-64 rounded-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0868308976285!2d144.96305791570843!3d-37.81621894218269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5773aa0e6bdcf38!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1614653788085!5m2!1sen!2sau"></iframe>
-  </section>  <!-- Swipe & Discover -->  <section class="p-6 bg-purple-100">
+  </section>
+
+  <!-- Swipe & Discover -->
+  <section class="p-6 bg-purple-100">
     <h2 class="section-title">Swipe & Discover</h2>
     <p class="text-center mb-4 italic">"Love is just one swipe away"</p>
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <!-- Sample video cards -->
+        <!-- Profile 1 -->
         <div class="swiper-slide p-4 card bg-white">
           <video controls class="rounded-xl w-full"><source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"></video>
-          <p class="text-green-600 font-semibold">Verified</p>
+          <p class="text-green-600 font-semibold">Verified | Green Flag ✅</p>
           <p>Name: Jiwoo | Age: 26 | Gender: Female</p>
           <p class="text-sm">A fun-loving adventurer who believes in soul connections.</p>
           <div class="mt-2 flex justify-between">
@@ -39,10 +47,35 @@
             <button class="bg-red-500 text-white px-4 py-1 rounded-xl">Pass</button>
           </div>
         </div>
-        <!-- Repeat 4 more similar profiles here -->
+        <!-- Profile 2 -->
+        <div class="swiper-slide p-4 card bg-white">
+          <video controls class="rounded-xl w-full"><source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4"></video>
+          <p class="text-red-500 font-semibold">Needs Improvement | Red Flag ❌</p>
+          <p>Name: Minho | Age: 28 | Gender: Male</p>
+          <p class="text-sm">A K-drama lover searching for his main lead.</p>
+          <div class="mt-2 flex justify-between">
+            <button class="bg-green-500 text-white px-4 py-1 rounded-xl">Like</button>
+            <button class="bg-red-500 text-white px-4 py-1 rounded-xl">Pass</button>
+          </div>
+        </div>
+        <!-- Profile 3 -->
+        <div class="swiper-slide p-4 card bg-white">
+          <video controls class="rounded-xl w-full"><source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"></video>
+          <p class="text-green-600 font-semibold">Highly Rated | Green Flag ✅</p>
+          <p>Name: Sora | Age: 24 | Gender: Female</p>
+          <p class="text-sm">A singer-songwriter dreaming of a poetic love.</p>
+          <div class="mt-2 flex justify-between">
+            <button class="bg-green-500 text-white px-4 py-1 rounded-xl">Like</button>
+            <button class="bg-red-500 text-white px-4 py-1 rounded-xl">Pass</button>
+          </div>
+        </div>
       </div>
+      <div class="swiper-pagination mt-4"></div>
     </div>
-  </section>  <!-- AI Chat Assistant -->  <section class="p-6 bg-pink-100">
+  </section>
+
+  <!-- AI Chat Assistant -->
+  <section class="p-6 bg-pink-100">
     <h2 class="section-title">AI Chat Assistant</h2>
     <p class="text-center italic">"Your conversation partner, anytime"</p>
     <div class="grid gap-4 text-center">
@@ -51,7 +84,10 @@
       <input class="border px-4 py-2 rounded-xl" type="text" placeholder="Ask a question...">
       <button class="bg-purple-600 text-white px-4 py-2 rounded-xl">Send</button>
     </div>
-  </section>  <!-- Event Match -->  <section class="p-6">
+  </section>
+
+  <!-- Event Match -->
+  <section class="p-6">
     <h2 class="section-title">Event Match</h2>
     <button class="bg-green-600 text-white px-4 py-2 mb-4 rounded-xl">+ Add Event</button>
     <input class="border px-4 py-2 w-full rounded-xl mb-2" type="text" placeholder="Search Events">
@@ -59,12 +95,18 @@
       <div class="bg-white p-3 card">Event 1: Seoul Vacation</div>
       <div class="bg-white p-3 card">Event 2: K-Drama Night</div>
     </div>
-  </section>  <!-- My Story -->  <section class="p-6 bg-purple-50">
+  </section>
+
+  <!-- My Story -->
+  <section class="p-6 bg-purple-50">
     <h2 class="section-title">My Story</h2>
     <button class="bg-pink-500 text-white px-4 py-2 rounded-xl mb-2">+ Add Story</button>
     <div class="bg-white p-3 card">Story 1: How I met my soulmate...</div>
     <div class="bg-white p-3 card mt-2">Story 2: A love story across borders</div>
-  </section>  <!-- Fan Board -->  <section class="p-6">
+  </section>
+
+  <!-- Fan Board -->
+  <section class="p-6">
     <h2 class="section-title">Fan Board</h2>
     <div class="flex mb-2 gap-2">
       <input class="border px-4 py-2 w-full rounded-xl" type="text" placeholder="Search fan boards">
@@ -72,24 +114,35 @@
     </div>
     <div class="bg-white p-3 card">BTS Army Fan Board</div>
     <div class="bg-white p-3 card mt-2">Crash Landing Lovers</div>
-  </section>  <!-- Save Later -->  <section class="p-6 bg-pink-50">
+  </section>
+
+  <!-- Save Later -->
+  <section class="p-6 bg-pink-50">
     <h2 class="section-title">Save Later</h2>
     <p class="italic text-center">"Bookmark stories, profiles & events you love"</p>
     <div class="grid gap-2 mt-4">
       <div class="bg-white p-3 card">Mystery Profile</div>
       <div class="bg-white p-3 card">Seoul Music Fest Event</div>
     </div>
-  </section>  <!-- Contact Info -->  <footer class="p-6 bg-purple-700 text-white text-center">
+  </section>
+
+  <!-- Contact Info -->
+  <footer class="p-6 bg-purple-700 text-white text-center">
     <p>Contact: Padamata Greeshma</p>
     <p>Email: greeshmapadamata09@gmail.com</p>
     <p>© 2025 Korean Matrimony. All rights reserved.</p>
-  </footer>  <script>
+  </footer>
+
+  <!-- Swiper Script -->
+  <script>
     new Swiper('.swiper-container', {
       slidesPerView: 1,
       spaceBetween: 10,
       loop: true,
       autoplay: { delay: 3000 },
       pagination: { el: '.swiper-pagination', clickable: true },
+      allowTouchMove: true,
     });
-  </script></body>
-    </html>
+  </script>
+</body>
+          </html>
