@@ -1,107 +1,103 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Korean Matrimony</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #fff0f6;
-      color: #333;
-    }
-    .section {
-      background: #fce4ec;
-      margin: 1rem;
-      padding: 1rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      animation: fadeIn 1s ease-in-out;
-    }
-    h2 {
-      color: #6a1b9a;
-    }
-    button, .tag {
-      background-color: #c2185b;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 12px;
-      margin: 0.2rem;
-    }
-    input, textarea {
-      padding: 0.5rem;
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid #ccc;
-    }
-    .profile-card, .event-item, .fan-page {
-      background: white;
-      border-radius: 20px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-  </style>
-</head>
-<body>
-  <div class="section">
-    <h2>Korean Matrimony: Connecting the World Through Love</h2>
-    <button>Login</button>
-    <button>Signup</button>
-  </div>  <div class="section">
-    <h2>Global Love Map</h2>
-    <p>Select a location to explore profiles</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution_gray_political.png" style="width:100%; border-radius:20px;">
-  </div>  <div class="section">
-    <h2>Swipe & Discover (Video Profile)</h2>
-    <div class="profile-card">
-      <video width="100%" controls poster="">
-        <source src="profile-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p><strong>Name:</strong> Jisoo</p>
-      <p><strong>Age:</strong> 25</p>
-      <p><span style="color:green">Green Flag</span></p>
-      <p>"Hi! I'm Jisoo, I love music, traveling and kind souls."</p>
-      <button>Like</button>
-      <button>Pass</button>
+// Korean Matrimony: Connecting the World Through Love import React from "react"; import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button"; import { MapPin, Heart, X, Video, MessageCircle } from "lucide-react"; import "./App.css";
+
+const profiles = [ { video: "https://www.w3schools.com/html/mov_bbb.mp4", name: "Yuna Kim", age: 26, gender: "Female", flag: "Green", description: "Loves traveling and K-dramas. Looking for someone with shared interests." }, { video: "https://www.w3schools.com/html/movie.mp4", name: "Jin Park", age: 29, gender: "Male", flag: "Green", description: "Passionate about photography and music." }, { video: "https://www.w3schools.com/html/mov_bbb.mp4", name: "Min Seo", age: 25, gender: "Female", flag: "Red", description: "Adventurous soul. Let's share stories over coffee." }, { video: "https://www.w3schools.com/html/movie.mp4", name: "Jisoo Lee", age: 28, gender: "Female", flag: "Green", description: "Cat mom and bookworm. Seeking meaningful connection." }, { video: "https://www.w3schools.com/html/mov_bbb.mp4", name: "Taemin Choi", age: 30, gender: "Male", flag: "Green", description: "Techie, foodie, and world explorer." } ];
+
+export default function KoreanMatrimony() { return ( <div className="min-h-screen bg-pink-50 p-4"> <header className="text-center p-6"> <h1 className="text-4xl font-bold text-purple-600">Korean Matrimony</h1> <p className="text-lg text-gray-600">Connecting the world through love</p> <div className="mt-4 space-x-4"> <Button>Login</Button> <Button variant="outline">Signup</Button> </div> </header>
+
+<section className="text-center py-6">
+    <h2 className="text-2xl font-bold mb-2">Global Love Map</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093723!2d144.95565131531587!3d-37.81732797975159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577360fd2fd8f00!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1623153022911!5m2!1sen!2sau"
+      width="100%"
+      height="300"
+      className="rounded-xl border shadow"
+      loading="lazy"
+    ></iframe>
+  </section>
+
+  <section className="py-6">
+    <h2 className="text-xl font-bold text-center mb-2">Swipe & Discover Profiles</h2>
+    <p className="text-center text-sm text-gray-500 mb-4">“Love finds a way when you open your heart.”</p>
+    <div className="flex overflow-x-scroll gap-4 p-2">
+      {profiles.map((profile, index) => (
+        <Card key={index} className="min-w-[280px]">
+          <video src={profile.video} controls className="rounded-xl w-full h-40 object-cover" />
+          <CardContent className="space-y-2">
+            <div className="text-green-500 font-semibold">AI Verified</div>
+            <div className="font-bold text-lg">{profile.name}, {profile.age}</div>
+            <div className="text-sm text-gray-500">{profile.gender} | Flag: {profile.flag}</div>
+            <p className="text-sm">{profile.description}</p>
+            <div className="flex justify-between">
+              <Button variant="outline"><X className="w-4 h-4" /> Pass</Button>
+              <Button><Heart className="w-4 h-4" /> Like</Button>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
     </div>
-  </div>  <div class="section">
-    <h2>AI Chat Assistant</h2>
-    <blockquote>"Let's spark a meaningful connection!"</blockquote>
-    <button>Conversation Starter</button>
-    <button>Integrate Chat with AI</button>
-    <input placeholder="Ask a question..." />
-    <button>Send</button>
-  </div>  <div class="section">
-    <h2>Event Match</h2>
-    <button>Add Event</button>
-    <div class="event-item">Seoul Vacation</div>
-    <div class="event-item">Virtual Hangout</div>
-  </div>  <div class="section">
-    <h2>My Story</h2>
-    <blockquote>"Your love journey matters. Share it."</blockquote>
-    <textarea placeholder="Add your love story..."></textarea>
-    <button>Submit Story</button>
-  </div>  <div class="section">
-    <h2>Fan Board</h2>
-    <input placeholder="Search fan pages...">
-    <div class="fan-page tag">BTS Army</div>
-    <div class="fan-page tag">Crash Landing</div>
-    <button>Add New Fan Page</button>
-  </div>  <div class="section">
-    <h2>Save for Later</h2>
-    <blockquote>"Keep your favorites close."</blockquote>
-    <button>Saved Profiles</button>
-  </div>  <div class="section">
-    <h2>Contact</h2>
-    <p>greenshine pedanta<br>greenshine@app</p>
-  </div>
-</body>
-  </html>
+  </section>
+
+  <section className="py-6">
+    <h2 className="text-xl font-bold text-center">AI Chat Assistant</h2>
+    <p className="text-center text-sm text-gray-500 mb-4">“Start a meaningful conversation”</p>
+    <div className="flex justify-center gap-4 flex-wrap">
+      <Button>Conversation Starter</Button>
+      <Button variant="outline">Integrate Chat with AI</Button>
+      <Button>Ask a Question</Button>
+    </div>
+  </section>
+
+  <section className="py-6">
+    <h2 className="text-xl font-bold text-center">Event Match</h2>
+    <p className="text-center text-sm text-gray-500 mb-4">“Find love in real moments”</p>
+    <div className="flex justify-center gap-4 flex-wrap">
+      <Button>+ Add Event</Button>
+      <Button variant="outline">Search Events</Button>
+    </div>
+    <ul className="mt-4 text-center space-y-2">
+      <li>Event 1: Seoul Love Fest</li>
+      <li>Event 2: K-Drama Night</li>
+    </ul>
+  </section>
+
+  <section className="py-6">
+    <h2 className="text-xl font-bold text-center">My Story</h2>
+    <p className="text-center text-sm text-gray-500 mb-4">“Share your journey to love”</p>
+    <Button className="block mx-auto mb-2">+ Add Story</Button>
+    <ul className="text-center space-y-2">
+      <li>Story 1: Found love through a common song</li>
+      <li>Story 2: Met during a fan event</li>
+    </ul>
+  </section>
+
+  <section className="py-6">
+    <h2 className="text-xl font-bold text-center">Fan Board</h2>
+    <p className="text-center text-sm text-gray-500 mb-4">“Connect through shared fandoms”</p>
+    <div className="flex justify-center gap-4 flex-wrap mb-2">
+      <Button>Search</Button>
+      <Button>+ Add</Button>
+    </div>
+    <ul className="text-center space-y-2">
+      <li>BTS Army</li>
+      <li>Crash Landing on You Fans</li>
+    </ul>
+  </section>
+
+  <section className="py-6">
+    <h2 className="text-xl font-bold text-center">Save for Later</h2>
+    <p className="text-center text-sm text-gray-500 mb-4">“Keep your favorites close”</p>
+    <ul className="text-center">
+      <li>My Story</li>
+      <li>Profile</li>
+      <li>Event</li>
+    </ul>
+  </section>
+
+  <footer className="text-center text-xs text-gray-500 py-6 border-t">
+    <p>Contact: Padamata Greeshma - greeshmapadamata09@gmail.com</p>
+    <p>&copy; 2025 Korean Matrimony. All rights reserved.</p>
+  </footer>
+</div>
+
+); }
+
