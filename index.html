@@ -22,7 +22,7 @@
     <section id="profile">
         <h2>Profile Video (AI Verified)</h2>
         <video controls>
-            <source src="profile.mp4" type="video/mp4">
+            <source src="assets/profile.mp4" type="video/mp4">
         </video>
         <p>Status: <span id="verification">✅ Green Flag</span></p>
     </section>
@@ -61,109 +61,9 @@
         <p>&copy; 2025 Korean Matrimony</p>
     </footer>
 
-    <script>
-        // Tinder-style swipe logic
-        document.addEventListener("DOMContentLoaded", function () {
-            const profileCards = document.querySelectorAll(".profile-card");
-
-            profileCards.forEach(card => {
-                let startX = 0;
-
-                card.addEventListener("touchstart", (e) => {
-                    startX = e.touches[0].clientX;
-                });
-
-                card.addEventListener("touchmove", (e) => {
-                    let touchX = e.touches[0].clientX;
-                    let deltaX = touchX - startX;
-                    card.style.transform = `translate(${deltaX}px) rotate(${deltaX * 0.1}deg)`;
-                });
-
-                card.addEventListener("touchend", (e) => {
-                    let touchX = e.changedTouches[0].clientX;
-                    let deltaX = touchX - startX;
-
-                    if (deltaX > 100) {
-                        card.classList.add("swiped-right");
-                        alert("💘 Liked!");
-                    } else if (deltaX < -100) {
-                        card.classList.add("swiped-left");
-                        alert("👋 Passed!");
-                    } else {
-                        card.style.transform = "";
-                    }
-                });
-            });
-        });
-
-        // AI match logic
-        document.getElementById("love-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-            alert("✨ AI is finding your perfect match!");
-        });
-
-        // Event match feature
-        function addEvent() {
-            alert("🎉 Event added successfully!");
-        }
-
-        function searchLocation() {
-            alert("🔎 Searching for events near you...");
-        }
-
-        // Fan-based board feature
-        function searchFans() {
-            alert("🔎 Searching for fan matches...");
-        }
-
-        function addFanBoard() {
-            alert("📌 Fan board added!");
-        }
-
-        // Save for later feature
-        function savePerson() {
-            alert("💾 Profile saved for later!");
-        }
-    </script>
-
-    <style>
-        body {
-            font-family: 'Netflix Sans', sans-serif;
-            background-color: #fafafa;
-            color: #333;
-        }
-
-        header {
-            text-align: center;
-            background-color: #ff4757;
-            color: white;
-            padding: 20px;
-        }
-
-        button {
-            background-color: #ff4757;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .profile-card {
-            width: 300px;
-            height: 400px;
-            background-color: white;
-            border-radius: 10px;
-        }
-
-        .swiped-right {
-            transform: translateX(500px);
-            opacity: 0;
-        }
-
-        .swiped-left {
-            transform: translateX(-500px);
-            opacity: 0;
-        }
-    </style>
+    <script src="tinder-swipe.js"></script>
+    <script src="ai-match.js"></script>
+    <script src="events.js"></script>
+    <script src="fab-board.js"></script>
 </body>
-</html>
+        </html>
